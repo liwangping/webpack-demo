@@ -2,7 +2,7 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  entry: "./src/index.js", // 打包文件的入口，webpack将从这个文件开始分析整个项目的依赖结构
+  entry: "./src/index.jsx", // 打包文件的入口，webpack将从这个文件开始分析整个项目的依赖结构
   output: {
     filename: "main.js", // 输出的文件名称
     path: path.resolve(__dirname, "dist"), // 输出的文件夹
@@ -47,7 +47,7 @@ module.exports = {
         use: ["xml-loader"],
       },
       {
-        test: /\.js$/,
+        test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: {
           loader: "babel-loader",
