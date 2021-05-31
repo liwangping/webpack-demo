@@ -1,4 +1,5 @@
 const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
   entry: "./src/index.js", // 打包文件的入口，webpack将从这个文件开始分析整个项目的依赖结构
@@ -47,4 +48,9 @@ module.exports = {
       },
     ],
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: path.join(__dirname, "./index.html"), // ./index.html是作为模板生成dist/index.html
+    }),
+  ],
 };
