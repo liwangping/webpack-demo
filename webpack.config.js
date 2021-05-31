@@ -7,6 +7,15 @@ module.exports = {
     filename: "main.js", // 输出的文件名称
     path: path.resolve(__dirname, "dist"), // 输出的文件夹
   },
+  target: "web",
+  mode: "development",
+  devtool: "inline-source-map",
+  devServer: {
+    contentBase: path.resolve(__dirname, "dist"),
+    hot: "localhost",
+    compress: true,
+    port: 3002,
+  },
   module: {
     rules: [
       {
